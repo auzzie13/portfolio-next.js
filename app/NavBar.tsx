@@ -1,14 +1,15 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import classnames from "classnames";
 import React from "react";
 
 const NavBar = () => {
   const pathname = usePathname();
   const links = [
-    { label: "Home", href: "/"},
-    { label: "Portfolio", href: "/portfolio"},
-    { label: "Contact", href: "/contact"},
+    { label: "Home", href: "/" },
+    { label: "Portfolio", href: "/portfolio" },
+    { label: "Contact", href: "/contact" },
   ];
 
   return (
@@ -17,12 +18,20 @@ const NavBar = () => {
         LOGO
       </Link>
       <ul className="w-1/2 flex justify-evenly">
-        {links.map(link => <Link key={link.href}
+        {links.map((link) => (
+          <Link
+            key={link.href}
             href={link.href}
-            className={ pathname == link.href ? "text-red-700 hover:text-red-700/60" : "text-gray-200 hover:text-gray-200/60" }
+            className={classnames({
+              "text-red-700": link.href === pathname,
+              "hover:text-red-700/60": link.href === pathname,
+              "text-gray-200": link.href !== pathname,
+              "hover:text-gray-200/60": link.href !== pathname,
+            })}
           >
             {link.label}
-          </Link>)}
+          </Link>
+        ))}
       </ul>
     </nav>
   );
