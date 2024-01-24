@@ -9,3 +9,12 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+model Project {
+  id              Int    @id @default(autoincrement())
+  project_name    String @db.VarChar(255)
+  code_link       String @db.VarChar(255)
+  deployment_link String @db.VarChar(255)
+  description     String @db.Text
+  languages       String @db.VarChar(255)
+}
