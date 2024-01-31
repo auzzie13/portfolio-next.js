@@ -2,12 +2,13 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import NavBar from './NavBar'
+import SideBar from './SideBar'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Next.JS Portfolio',
-  description: 'Austin Williams portfolio page',
+  title: 'Austin Williams Portfolio',
+  description: 'using next.js, tailwind, typescript, prisma to buid portfolio page',
 }
 
 export default function RootLayout({
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <NavBar />
         <main>{children}</main>
+        <SideBar />
       </body>
     </html>
   )

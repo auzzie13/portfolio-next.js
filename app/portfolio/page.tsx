@@ -2,7 +2,7 @@ import React from 'react'
 
 export const PortfolioPage = () => {
   return (
-    <div>PortfolioPage</div>
+    <div className="m-2 text-red-800">PortfolioPage</div>
   )
 };
 
