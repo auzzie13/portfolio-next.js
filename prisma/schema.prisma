@@ -18,3 +18,12 @@ model Project {
   description     String @db.Text
   languages       String @db.VarChar(255)
 }
+
+model Message {
+  id         Int      @id @default(autoincrement())
+  first_name String   @db.VarChar(50)
+  last_name  String   @db.VarChar(50)
+  email      String   @db.VarChar(50)
+  message    String   @db.Text
+  date       DateTime @default(now())
+}
