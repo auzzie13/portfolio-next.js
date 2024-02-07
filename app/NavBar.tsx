@@ -13,7 +13,7 @@ const NavBar = () => {
   ];
 
   return (
-    <nav className="flex m-2 bg-stone-800 text-gray-200 border-b-4 border-black h-14 items-center">
+    <nav className="mt-2 mx-2 flex bg-stone-800 text-gray-200 h-14 items-center">
       <Link className="w-1/2 pl-12" href="/">
         LOGO
       </Link>
@@ -23,8 +23,8 @@ const NavBar = () => {
             key={link.href}
             href={link.href}
             className={classnames({
-              "text-red-700": link.href === pathname,
-              "hover:text-red-700/60": link.href === pathname,
+              "text-red-800": link.href === pathname,
+              "hover:text-red-800/60": link.href === pathname,
               "text-gray-200": link.href !== pathname,
               "hover:text-gray-200/60": link.href !== pathname,
             })}

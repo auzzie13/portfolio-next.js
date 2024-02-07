@@ -1,12 +1,12 @@
 import Image from "next/image";
 import headshot from "../public/headshot2.png";
 import AboutMe from "./components/AboutMe";
+import SideBar from "./components/SideBar";
 
 export default function Home() {
   return (
-    <div className="flex m-2 bg-stone-800 text-red-800">
-      <div id="aboutMeContainer" className="flex flex-col pl-28 gap-4 w-1/2 justify-center h-screen">
-        <p className="invisible">Tell me more</p>
+    <div className="flex mx-2 bg-stone-800 text-red-800">
+      <div id="aboutMeContainer" className="flex flex-col pl-28 space-y-6 w-1/2 justify-center h-screen">
         <p>~ I am</p>
         <h1 className="text-gray-200 text-5xl">Austin Williams</h1>
         <p>Software Developer</p>

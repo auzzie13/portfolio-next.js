@@ -1,17 +1,14 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 
 const AboutMe = () => {
-
-    const handleClick = event => {
-        console.log(event);
-    }
+  const [show, setShow] = useState(true);
 
   return (
     <div>
       <button
         className="bg-transparent hover:bg-red-800 hover:text-white py-2 px-4 border border-red-800 hover:border-transparent rounded-tl-lg rounded-br-lg"
-        onClick={handleClick}
+        onClick={() => setShow(!show)}
       >
         About Me
       </button>
