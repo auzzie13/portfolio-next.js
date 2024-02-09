@@ -9,6 +9,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { createMessageSchema } from '../validationSchemas';
 import { z } from 'zod';
 import ErrorMessage from '../components/ErrorMessage';
+import Spinner from '../components/Spinner';
 
 type MessageForm = z.infer<typeof createMessageSchema>;
 
@@ -18,6 +19,7 @@ const ContactPage = () => {
     resolver: zodResolver(createMessageSchema)
   });
   const [error, setError] = useState('');
+  const [isSubmitting, setSubmitting] = useState(false);
 
   return (
     <div className='pt-4  bg-stone-800 mx-2 h-screen'>
@@ -28,9 +30,11 @@ const ContactPage = () => {
       className='pt-4 space-y-3' 
       onSubmit={handleSubmit(async (data) => {
         try {
+          setSubmitting(true);
           await axios.post('/api/messages', data);
           router.push('/');          
         } catch (error) {
+          setSubmitting(false);
           setError('An unexpected error occurred.')
         }
       })}>
@@ -45,7 +49,7 @@ const ContactPage = () => {
     </Flex>
     <TextArea style={{ width: '50%', marginRight: 'auto', marginLeft: 'auto' }} placeholder='Write me a message...' {...register('message')} />
     <ErrorMessage>{errors.message?.message}</ErrorMessage>
-    <Button>Send Message</Button>
+    <Button disabled={isSubmitting}>Send Message {isSubmitting && <Spinner />}</Button>
 
     </form>
     </div>
