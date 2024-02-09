@@ -28,7 +28,7 @@ export default function RootLayout({
         <Theme>
         <NavBar />
         <main>{children}</main>
-        <SideBar />
+        {/* <SideBar /> */}
         </Theme>
       </body>
     </html>
