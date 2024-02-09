@@ -1,6 +1,6 @@
 import Image from "next/image";
 import headshot from "../public/headshot2.png";
-// import AboutMe from "./components/AboutMe";
+import AboutMe from "./components/AboutMe";
 // import SideBar from "./components/SideBar";
 import { Button } from "@radix-ui/themes";
 
@@ -21,7 +21,7 @@ export default function Home() {
           modules to interact with multiple APIs to automate bulk data imports
           and exports.
         </p>
-        {/* <AboutMe /> */}
+        <AboutMe />
         <Button>About Me</Button>
       </div>
       <div className="flex w-1/2 justify-center md:flex relative overflow-hidden">
