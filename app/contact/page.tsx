@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { createMessageSchema } from '../validationSchemas';
 import { z } from 'zod';
+import ErrorMessage from '../components/ErrorMessage';
 
 type MessageForm = z.infer<typeof createMessageSchema>;
 
@@ -36,14 +37,14 @@ const ContactPage = () => {
 
     <Flex className='mx-auto w-1/2' gap='3'>
       <TextField.Input placeholder='First Name' {...register('first_name')} />
-      {errors.first_name &&  <Text color="red" as='p'>{errors.first_name.message}</Text>}
+      <ErrorMessage>{errors.first_name?.message}</ErrorMessage>
       <TextField.Input placeholder='Last Name' {...register('last_name')} />
-      {errors.last_name &&  <Text color="red" as='p'>{errors.last_name.message}</Text>}
+      <ErrorMessage>{errors.last_name?.message}</ErrorMessage>
       <TextField.Input placeholder='Email' {...register('email')} />
-      {errors.email &&  <Text color='red' as='p'>{errors.email.message}</Text>}
+      <ErrorMessage>{errors.email?.message}</ErrorMessage>
     </Flex>
     <TextArea style={{ width: '50%', marginRight: 'auto', marginLeft: 'auto' }} placeholder='Write me a message...' {...register('message')} />
-    {errors.message &&  <Text color='red' as='p'>{errors.message.message}</Text>}
+    <ErrorMessage>{errors.message?.message}</ErrorMessage>
     <Button>Send Message</Button>
 
     </form>
