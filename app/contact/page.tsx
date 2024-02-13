@@ -21,6 +21,17 @@ const ContactPage = () => {
   const [error, setError] = useState('');
   const [isSubmitting, setSubmitting] = useState(false);
 
+  const onSubmit = handleSubmit(async (data) => {
+    try {
+      setSubmitting(true);
+      await axios.post('/api/messages', data);
+      router.push('/');          
+    } catch (error) {
+      setSubmitting(false);
+      setError('An unexpected error occurred.')
+    }
+  })
+
   return (
     <div className='pt-4  bg-stone-800 mx-2 h-screen'>
       {error && <Callout.Root color='red'>
@@ -28,16 +39,7 @@ const ContactPage = () => {
         </Callout.Root>}
     <form 
       className='pt-4 space-y-3' 
-      onSubmit={handleSubmit(async (data) => {
-        try {
-          setSubmitting(true);
-          await axios.post('/api/messages', data);
-          router.push('/');          
-        } catch (error) {
-          setSubmitting(false);
-          setError('An unexpected error occurred.')
-        }
-      })}>
+      onSubmit={onSubmit}>
 
     <Flex className='mx-auto w-1/2' gap='3'>
       <TextField.Input placeholder='First Name' {...register('first_name')} />

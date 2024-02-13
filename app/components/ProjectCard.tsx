@@ -1,6 +1,7 @@
-import React from "react";
+import React, { PropsWithChildren } from "react";
 
-export const ProjectCard = () => {
+export const ProjectCard = ({ children }: PropsWithChildren) => {
+
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg border-solid border-2 border-red-800">
       {/* <img
