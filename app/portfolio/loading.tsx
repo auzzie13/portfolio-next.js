@@ -2,6 +2,7 @@ import React from 'react';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import SideBar from '../components/SideBar';
+import ProjectActions from './ProjectActions';
 
 const projects = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 const styles =
@@ -9,7 +10,9 @@ const styles =
 
 const LoadingProjectsPage = () => {
   return (
-    <div className="mx-2 pt-8 px-14 bg-stone-800 text-red-800 grid grid-cols-4 gap-4">
+    <div className='mx-2 pt-8 px-14 bg-stone-800 text-red-800'>
+    <ProjectActions />
+    <div className="grid grid-cols-4 gap-4">
     {projects.map((project) => (
       <div
         key={project}
@@ -38,6 +41,7 @@ const LoadingProjectsPage = () => {
       </div>
     ))}
     <SideBar styles={styles} />
+  </div>
   </div>
   )
 }

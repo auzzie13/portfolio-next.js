@@ -2,7 +2,7 @@ import React from 'react'
 
 const ProjectActions = () => {
   return (
-    <div>ProjectActions</div>
+    <div>Row of Buttons</div>
   )
 }
 
