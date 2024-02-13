@@ -1,12 +1,14 @@
 import React from "react";
 import prisma from "@/prisma/client";
 import SideBar from "../components/SideBar";
+import delay from 'delay';
 
 const styles =
   "fixed right-0 top-4 h-full flex flex-col pr-8 gap-10 justify-center";
 
 export const PortfolioPage = async () => {
   const projects = await prisma.project.findMany();
+  await delay(2000);
 
   return (
     <div className="mx-2 pt-8 px-14 bg-stone-800 text-red-800 grid grid-cols-4 gap-4">
