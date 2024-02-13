@@ -1,7 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const SideBar = () => {
+interface Props {
+  styles: string
+}
+
+const SideBar = ({ styles }: Props ) => {
   const links = [
     {
       label: "LinkedIn",
@@ -26,9 +30,10 @@ const SideBar = () => {
   ];
 
   // "fixed right-0 top-4 h-full flex flex-col pr-8 gap-10 justify-center"
+  // "fixed right-0 top-4 h-full flex flex-col pr-8 gap-10 justify-center"
 
   return (
-    <aside className="fixed right-0 top-4 h-full flex flex-col pr-8 gap-10 justify-center">
+    <aside className={styles}>
       {links.map((link) => (
         <Link
           key={link.href}

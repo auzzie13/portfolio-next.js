@@ -1,13 +1,9 @@
 import React from "react";
 import prisma from "@/prisma/client";
+import SideBar from "../components/SideBar";
 
-// interface Props {
-//   project_name: string;
-//   code_link: string;
-//   deployment_link: string;
-//   description: string;
-//   languages: string;
-// }
+const styles =
+  "fixed right-0 top-4 h-full flex flex-col pr-8 gap-10 justify-center";
 
 export const PortfolioPage = async () => {
   const projects = await prisma.project.findMany();
@@ -41,6 +37,7 @@ export const PortfolioPage = async () => {
           </div>
         </div>
       ))}
+      <SideBar styles={styles} />
     </div>
   );
 };

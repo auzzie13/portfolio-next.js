@@ -1,8 +1,10 @@
 import Image from "next/image";
 import headshot from "../public/headshot2.png";
 import AboutMe from "./components/AboutMe";
-// import SideBar from "./components/SideBar";
+import SideBar from "./components/SideBar";
 import { Button } from "@radix-ui/themes";
+
+const styles = "flex gap-10"
 
 export default function Home() {
   return (
@@ -10,6 +12,7 @@ export default function Home() {
       <div id="aboutMeContainer" className="flex flex-col pl-28 space-y-6 w-1/2 justify-center h-screen">
         <p>~ I am</p>
         <h1 className="text-gray-200 text-5xl">Austin Williams</h1>
+        <SideBar styles={styles}/>
         <p>Software Developer</p>
         <p className="text-gray-200">
           Currently apart of the Database Management Core for the Critical

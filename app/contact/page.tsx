@@ -10,6 +10,10 @@ import { createMessageSchema } from '../validationSchemas';
 import { z } from 'zod';
 import ErrorMessage from '../components/ErrorMessage';
 import Spinner from '../components/Spinner';
+import SideBar from "../components/SideBar";
+
+const styles =
+  "fixed right-0 top-4 h-full flex flex-col pr-8 gap-10 justify-center";
 
 type MessageForm = z.infer<typeof createMessageSchema>;
 
@@ -54,6 +58,7 @@ const ContactPage = () => {
     <Button disabled={isSubmitting}>Send Message {isSubmitting && <Spinner />}</Button>
 
     </form>
+    <SideBar styles={styles} />
     </div>
   )
 }
