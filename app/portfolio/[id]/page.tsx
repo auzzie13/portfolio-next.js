@@ -1,6 +1,11 @@
 import React from "react";
 import prisma from "@/prisma/client";
 import { notFound } from "next/navigation";
+import SideBar from "../../components/SideBar";
+import delay from "delay";
+
+const styles =
+  "fixed right-0 top-4 h-full flex flex-col pr-8 gap-10 justify-center";
 
 interface Props {
   params: { id: string };
@@ -16,7 +21,11 @@ const ProjectDetailPage = async ({ params }: Props) => {
 
   if (!project) notFound();
 
+  await delay(2000);
+
+
   return (
+    <div>
     <div className="mt-2 mx-auto pt-8 px-14 bg-stone-800 max-w-sm rounded overflow-hidden shadow-lg border-solid border-2 border-red-800">
       {/* <img
   className="w-full"
@@ -39,6 +48,8 @@ const ProjectDetailPage = async ({ params }: Props) => {
           {project.languages}
         </span>
       </div>
+    </div>
+    <SideBar styles={styles} />
     </div>
   );
 };

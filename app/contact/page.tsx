@@ -12,6 +12,7 @@ import ErrorMessage from '../components/ErrorMessage';
 import Spinner from '../components/Spinner';
 import SideBar from "../components/SideBar";
 
+
 const styles =
   "fixed right-0 top-4 h-full flex flex-col pr-8 gap-10 justify-center";
 
@@ -35,6 +36,7 @@ const ContactPage = () => {
       setError('An unexpected error occurred.')
     }
   })
+
 
   return (
     <div className='pt-4  bg-stone-800 mx-2 h-screen'>

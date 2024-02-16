@@ -1,9 +1,8 @@
-import React from "react";
 import prisma from "@/prisma/client";
-import SideBar from "../components/SideBar";
 import delay from "delay";
-import ProjectActions from "./ProjectActions";
 import Link from "next/link";
+import SideBar from "../components/SideBar";
+import ProjectActions from "./ProjectActions";
 
 const styles =
   "fixed right-0 top-4 h-full flex flex-col pr-8 gap-10 justify-center";
@@ -17,9 +16,10 @@ export const PortfolioPage = async () => {
       <ProjectActions />
       <div className="grid grid-cols-4 gap-4">
         {projects.map((project) => (
-          <div
+              <Link href={`/portfolio/${project.id}`}
+          
             key={project.id}
-            className="max-w-sm rounded overflow-hidden shadow-lg border-solid border-2 border-red-800"
+            className="max-w-sm rounded overflow-hidden shadow-lg border-solid border-2 border-red-800 hover:bg-red-800 hover:text-stone-800 active:bg-gray-200"
           >
             {/* <img
               className="w-full"
@@ -28,9 +28,9 @@ export const PortfolioPage = async () => {
             /> */}
             <div className="px-6 py-4">
               <div className="font-bold text-xl mb-2">
-                <Link href={`/portfolio/${project.id}`}>
+                
                 {project.project_name}
-                </Link>
+                
               </div>
               <p className="text-gray-700 text-base">{project.description}</p>
             </div>
@@ -45,11 +45,13 @@ export const PortfolioPage = async () => {
                 {project.languages}
               </span>
             </div>
-          </div>
+          
+          </Link>
         ))}
         <SideBar styles={styles} />
       </div>
     </div>
+    
   );
 };
 
