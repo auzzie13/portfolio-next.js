@@ -1,8 +1,7 @@
 import React from "react";
 import prisma from "@/prisma/client";
 import { notFound } from "next/navigation";
-import SideBar from "../../components/SideBar";
-import delay from "delay";
+import { SideBar } from "@/app/components";
 
 const styles =
   "fixed right-0 top-4 h-full flex flex-col pr-8 gap-10 justify-center";
@@ -21,7 +20,6 @@ const ProjectDetailPage = async ({ params }: Props) => {
 
   if (!project) notFound();
 
-  await delay(2000);
 
 
   return (

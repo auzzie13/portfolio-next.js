@@ -1,7 +1,6 @@
 import prisma from "@/prisma/client";
-import delay from "delay";
 import Link from "next/link";
-import SideBar from "../components/SideBar";
+import { SideBar } from "@/app/components";
 import ProjectActions from "./ProjectActions";
 
 const styles =
@@ -9,7 +8,6 @@ const styles =
 
 export const PortfolioPage = async () => {
   const projects = await prisma.project.findMany();
-  await delay(2000);
 
   return (
     <div className="mx-2 pt-8 px-14 bg-stone-800 text-red-800">

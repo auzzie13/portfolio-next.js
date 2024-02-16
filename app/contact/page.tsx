@@ -8,9 +8,7 @@ import { useRouter } from 'next/navigation';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { createMessageSchema } from '../validationSchemas';
 import { z } from 'zod';
-import ErrorMessage from '../components/ErrorMessage';
-import Spinner from '../components/Spinner';
-import SideBar from "../components/SideBar";
+import { ErrorMessage, Spinner, SideBar } from '@/app/components';
 
 
 const styles =
