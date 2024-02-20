@@ -16,7 +16,7 @@ export default function Home() {
   }
 
   return (
-    <div className="flex mx-2 bg-stone-800 text-red-800 h-screen">
+    <div className="flex mx-2 bg-stone-800 text-red-600 h-screen">
       <div className="flex flex-col pl-28 space-y-6 w-1/2 justify-center">
         <p
           style={{
@@ -51,8 +51,11 @@ export default function Home() {
           modules to interact with multiple APIs to automate bulk data imports
           and exports.
         </p>
-        <div className="h-80 overflow-y-auto" style={{ display: showMe ? "block" : "none" }}>
-          <p >
+        <div
+          className="h-80 overflow-y-auto"
+          style={{ display: showMe ? "block" : "none" }}
+        >
+          <p>
             Hello, thanks for your interest in learning more about me. I started
             my career as an athletic trainer, working in all levels of sport
             from the NFL, NCAA, MLS, and secondary schools. My most recent job
@@ -74,7 +77,7 @@ export default function Home() {
             sofware solutions that interact with multiple API`s and move data
             into our REDCap projects.
           </p>
-          <p >
+          <p>
             I am a very raw developer and eager to learn. I have taught myself
             multiple technology languages - php, next.js, tableau - without much
             mentorship and senior leadership in my field. I am a problem solver,
@@ -83,7 +86,7 @@ export default function Home() {
           </p>
         </div>
         <button
-          className="bg-transparent hover:bg-red-800 hover:text-white py-2 px-4 border border-red-800 hover:border-transparent rounded-tl-lg rounded-br-lg"
+          className="bg-transparent hover:bg-red-600 hover:text-white py-2 px-4 border border-red-600 hover:border-transparent rounded-tl-lg rounded-br-lg"
           onClick={toggle}
         >
           About Me

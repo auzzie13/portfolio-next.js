@@ -23,8 +23,8 @@ const NavBar = () => {
             key={link.href}
             href={link.href}
             className={classnames({
-              "text-red-800": link.href === pathname,
-              "hover:text-red-800/60": link.href === pathname,
+              "text-red-600": link.href === pathname,
+              "hover:text-red-600/60": link.href === pathname,
               "text-gray-200": link.href !== pathname,
               "hover:text-gray-200/60": link.href !== pathname,
             })}

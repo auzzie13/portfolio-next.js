@@ -9,13 +9,13 @@ const styles =
 
 const LoadingProjectsPage = () => {
   return (
-    <div className="mx-2 pt-8 px-14 bg-stone-800 text-red-800">
+    <div className="mx-2 pt-8 px-14 bg-stone-800 text-red-600">
       <ProjectActions />
       <div className="grid grid-cols-4 gap-4">
         {projects.map((project) => (
           <div
             key={project}
-            className="max-w-sm rounded overflow-hidden shadow-lg border-solid border-2 border-red-800"
+            className="max-w-sm rounded overflow-hidden shadow-lg border-solid border-2 border-red-600"
           >
             {/* <img
             className="w-full"

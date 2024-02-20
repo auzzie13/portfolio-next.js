@@ -2,6 +2,8 @@ import React from "react";
 import prisma from "@/prisma/client";
 import { notFound } from "next/navigation";
 import { SideBar } from "@/app/components";
+import Link from "next/link";
+import { ArrowLeftIcon } from "@radix-ui/react-icons";
 
 const styles =
   "fixed right-0 top-4 h-full flex flex-col pr-8 gap-10 justify-center";
@@ -21,10 +23,10 @@ const ProjectDetailPage = async ({ params }: Props) => {
   if (!project) notFound();
 
 
-
   return (
     <div>
-    <div className="mt-2 mx-auto pt-8 px-14 bg-stone-800 max-w-sm rounded overflow-hidden shadow-lg border-solid border-2 border-red-800">
+    <Link className="flex items-center text-red-600" key="/portfolio/list" href="/portfolio/list"><ArrowLeftIcon color="red" />Back</Link>
+    <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pt-8 px-14 bg-stone-800 max-w-sm rounded overflow-hidden shadow-lg border-solid border-2 border-red-600">
       {/* <img
   className="w-full"
   src="/img/card-top.jpg"

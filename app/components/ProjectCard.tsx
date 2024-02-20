@@ -1,9 +1,8 @@
 import React, { PropsWithChildren } from "react";
 
 export const ProjectCard = ({ children }: PropsWithChildren) => {
-
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg border-solid border-2 border-red-800">
+    <div className="max-w-sm rounded overflow-hidden shadow-lg border-solid border-2 border-red-600">
       {/* <img
         className="w-full"
         src="/img/card-top.jpg"

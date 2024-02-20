@@ -16,7 +16,7 @@ const AboutMe = () => {
   return (
     <div>
       <button
-        className="bg-transparent hover:bg-red-800 hover:text-white py-2 px-4 border border-red-800 hover:border-transparent rounded-tl-lg rounded-br-lg"
+        className="bg-transparent hover:bg-red-600 hover:text-white py-2 px-4 border border-red-600 hover:border-transparent rounded-tl-lg rounded-br-lg"
         onClick={toggle}
       >
         About Me

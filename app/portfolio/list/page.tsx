@@ -10,14 +10,14 @@ export const PortfolioPage = async () => {
   const projects = await prisma.project.findMany();
 
   return (
-    <div className="mx-2 pt-8 px-14 bg-stone-800 text-red-800">
+    <div className="mx-2 pt-8 px-14 bg-stone-800 text-red-600">
       <ProjectActions />
       <div className="grid grid-cols-4 gap-4">
         {projects.map((project) => (
           <Link
             href={`/portfolio/${project.id}`}
             key={project.id}
-            className="max-w-sm rounded overflow-hidden shadow-lg border-solid border-2 border-red-800 hover:bg-red-800 hover:text-stone-800 active:bg-gray-200"
+            className="max-w-sm rounded overflow-hidden shadow-lg border-solid border-2 border-red-600 hover:bg-red-600 hover:text-stone-800 active:bg-gray-200"
           >
             {/* <img
               className="w-full"
