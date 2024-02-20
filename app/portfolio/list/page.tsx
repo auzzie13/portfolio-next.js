@@ -14,8 +14,8 @@ export const PortfolioPage = async () => {
       <ProjectActions />
       <div className="grid grid-cols-4 gap-4">
         {projects.map((project) => (
-              <Link href={`/portfolio/${project.id}`}
-          
+          <Link
+            href={`/portfolio/${project.id}`}
             key={project.id}
             className="max-w-sm rounded overflow-hidden shadow-lg border-solid border-2 border-red-800 hover:bg-red-800 hover:text-stone-800 active:bg-gray-200"
           >
@@ -26,9 +26,7 @@ export const PortfolioPage = async () => {
             /> */}
             <div className="px-6 py-4">
               <div className="font-bold text-xl mb-2">
-                
                 {project.project_name}
-                
               </div>
               <p className="text-gray-700 text-base">{project.description}</p>
             </div>
@@ -43,13 +41,11 @@ export const PortfolioPage = async () => {
                 {project.languages}
               </span>
             </div>
-          
           </Link>
         ))}
         <SideBar styles={styles} />
       </div>
     </div>
-    
   );
 };
 

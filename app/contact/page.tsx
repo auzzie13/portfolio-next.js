@@ -2,7 +2,7 @@
 
 import { ErrorMessage, SideBar, Spinner } from "@/app/components";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Callout, Flex, TextArea, TextField } from "@radix-ui/themes";
+import { Callout, TextArea, TextField } from "@radix-ui/themes";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -10,8 +10,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { createMessageSchema } from "../validationSchemas";
 
-const styles =
-  "fixed right-0 top-4 h-full flex flex-col pr-8 gap-10 justify-center";
+const styles = "fixed right-0 top-4 h-full flex flex-col pr-8 gap-10 justify-center";
 
 type MessageForm = z.infer<typeof createMessageSchema>;
 
@@ -45,7 +44,7 @@ const ContactPage = () => {
           <Callout.Text>{error}</Callout.Text>
         </Callout.Root>
       )}
-      <form className="pt-4 space-y-4 mx-auto w-1/2 flex flex-col" onSubmit={onSubmit}>
+      <form className="pt-4 space-y-2 mx-auto w-1/2 flex flex-col" onSubmit={onSubmit}>
           <TextField.Input
             placeholder="First Name"
             color="red"
@@ -58,12 +57,14 @@ const ContactPage = () => {
         <TextField.Input placeholder="Email" color="red" size='3' {...register("email")} />
           <ErrorMessage>{errors.email?.message}</ErrorMessage>
         <TextArea
+          className="h-56"
           placeholder="Write me a message..."
           color="red"
           size="3"
           {...register("message")}
         />
         <ErrorMessage>{errors.message?.message}</ErrorMessage>
+
         <button
           className="bg-transparent hover:bg-red-800 hover:text-white py-2 px-4 border border-red-800 hover:border-transparent rounded-tl-lg rounded-br-lg mx-auto"
           disabled={isSubmitting}

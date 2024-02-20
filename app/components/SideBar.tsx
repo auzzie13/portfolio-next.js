@@ -3,7 +3,7 @@ import Link from "next/link";
 
 interface Props {
   styles: string
-  cssStyle: object
+  cssStyle?: object
 }
 
 const SideBar = ({ styles, cssStyle }: Props ) => {
