@@ -3,9 +3,10 @@ import Link from "next/link";
 
 interface Props {
   styles: string
+  cssStyle: object
 }
 
-const SideBar = ({ styles }: Props ) => {
+const SideBar = ({ styles, cssStyle }: Props ) => {
   const links = [
     {
       label: "LinkedIn",
@@ -38,6 +39,7 @@ const SideBar = ({ styles }: Props ) => {
         <Link
           key={link.href}
           href={link.href}
+          style={cssStyle}
           rel="noopener noreferrer"
           target="_blank">
             <Image src={link.src} alt={link.label} width={16} height={16} />
