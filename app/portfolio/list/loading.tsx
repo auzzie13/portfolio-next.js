@@ -1,7 +1,7 @@
 import React from "react";
 import { Skeleton } from "@/app/components";
 import SideBar from "../../components/SideBar";
-import ProjectActions from "./ProjectActions";
+import ProjectFilter from "./ProjectFilter";
 
 const projects = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 const styles =
@@ -10,7 +10,7 @@ const styles =
 const LoadingProjectsPage = () => {
   return (
     <div className="mx-2 pt-8 px-14 bg-stone-800 text-red-600">
-      <ProjectActions />
+      <ProjectFilter />
       <div className="grid grid-cols-4 gap-4">
         {projects.map((project) => (
           <div

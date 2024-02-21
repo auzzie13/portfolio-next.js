@@ -86,7 +86,7 @@ export default function Home() {
           </p>
         </div>
         <button
-          className="bg-transparent hover:bg-red-600 hover:text-white py-2 px-4 border border-red-600 hover:border-transparent rounded-tl-lg rounded-br-lg"
+          className="bg-transparent hover:bg-red-600 hover:text-white py-2 px-4 border border-red-600 hover:border-transparent rounded-tl-lg rounded-br-lg w-1/4"
           onClick={toggle}
         >
           About Me

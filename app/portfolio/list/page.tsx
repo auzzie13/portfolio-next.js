@@ -1,18 +1,23 @@
 import prisma from "@/prisma/client";
 import Link from "next/link";
 import { SideBar } from "@/app/components";
-import ProjectActions from "./ProjectActions";
+import ProjectFilter from "./ProjectFilter";
 
 const styles =
   "fixed right-0 top-4 h-full flex flex-col pr-8 gap-10 justify-center";
 
-export const PortfolioPage = async () => {
+interface Props {
+  searchParams: { option: string };
+}
+
+export const PortfolioPage = async ({ searchParams }: Props) => {
+  console.log(searchParams.option);
   const projects = await prisma.project.findMany();
 
   return (
-    <div className="mx-2 pt-8 px-14 bg-stone-800 text-red-600">
-      <ProjectActions />
-      <div className="grid grid-cols-4 gap-4">
+    <div className="mx-2 pt-8 px-14 bg-stone-800 text-red-600 min-h-screen">
+      <ProjectFilter />
+      <div className="mt-2 grid grid-cols-4 gap-4">
         {projects.map((project) => (
           <Link
             href={`/portfolio/${project.id}`}

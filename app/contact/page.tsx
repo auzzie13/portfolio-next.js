@@ -80,7 +80,7 @@ const ContactPage = () => {
         <ErrorMessage>{errors.message?.message}</ErrorMessage>
 
         <button
-          className="bg-transparent hover:bg-red-600 hover:text-white py-2 px-4 border border-red-600 hover:border-transparent rounded-tl-lg rounded-br-lg mx-auto"
+          className="bg-transparent hover:bg-red-600 hover:text-white py-2 px-4 border border-red-600 hover:border-transparent rounded-tl-lg rounded-br-lg mx-auto w-1/4"
           disabled={isSubmitting}
         >
           Send Message {isSubmitting && <Spinner />}
