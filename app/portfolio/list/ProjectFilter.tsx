@@ -2,7 +2,7 @@
 
 import { Primary } from "@prisma/client";
 import { Select } from "@radix-ui/themes";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 const languages: { label: string; value?: Primary }[] = [
   { label: "All" },
@@ -14,12 +14,12 @@ const languages: { label: string; value?: Primary }[] = [
 const ProjectFilter = () => {
   
   const router = useRouter();
+  const searchParams = useSearchParams();
 
   return (
     <Select.Root
+      defaultValue={searchParams.get('language') || 'ALL'}
       onValueChange={(language) => {
-
-        // const query = language ? `?option=${language}` : '';
         const query = language === 'ALL' ? '' : `?language=${language}`
         router.push('/portfolio/list' + query);
       }}

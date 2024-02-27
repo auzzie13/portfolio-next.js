@@ -11,7 +11,7 @@ const LoadingProjectsPage = () => {
   return (
     <div className="mx-2 pt-8 px-14 bg-stone-800 text-red-600">
       <ProjectFilter />
-      <div className="grid grid-cols-4 gap-4">
+      <div className="mt-2 grid grid-cols-4 gap-4">
         {projects.map((project) => (
           <div
             key={project}
