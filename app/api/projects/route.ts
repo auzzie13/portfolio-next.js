@@ -8,7 +8,11 @@ const createProjectSchema = z.object({
   code_link: z.string().min(1).max(255),
   deployment_link: z.string().min(1).max(255),
   description: z.string().min(1),
-  languages: z.string().min(1).max(255),
+  primary_language: z.string().min(1).max(50),
+  secondary_language: z.string().min(0).max(50).optional(),
+  secondary_language_2: z.string().min(0).max(50).optional(),
+  secondary_language_3: z.string().min(0).max(50).optional(),
+
 });
 
 export async function POST(request: NextRequest) {  
@@ -23,7 +27,11 @@ export async function POST(request: NextRequest) {
             code_link: body.code_link,
             deployment_link: body.deployment_link,
             description: body.description,
-            languages: body.languages,
+            primary_language: body.primary_language,
+            secondary_language: body.secondary_language,
+            secondary_language_2: body.secondary_language_2,
+            secondary_language_3: body.secondary_language_3,
+
         }
     });
 

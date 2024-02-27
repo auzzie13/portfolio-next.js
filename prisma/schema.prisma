@@ -11,12 +11,15 @@ datasource db {
 }
 
 model Project {
-  id              Int    @id @default(autoincrement())
-  project_name    String @db.VarChar(255)
-  code_link       String @db.VarChar(255)
-  deployment_link String @db.VarChar(255)
-  description     String @db.Text
-  languages       String @db.VarChar(255)
+  id                   Int     @id @default(autoincrement())
+  project_name         String  @db.VarChar(255)
+  code_link            String  @db.VarChar(255)
+  deployment_link      String  @db.VarChar(255)
+  description          String  @db.Text
+  primary_language     Primary 
+  secondary_language   String  @db.VarChar(50)
+  secondary_language_2 String  @db.VarChar(50)
+  secondary_language_3 String  @db.VarChar(50)
 }
 
 model Message {
@@ -26,4 +29,10 @@ model Message {
   email      String   @db.VarChar(50)
   message    String   @db.Text
   date       DateTime @default(now())
+}
+
+enum Primary {
+  MERN
+  PHP
+  NEXTjs
 }

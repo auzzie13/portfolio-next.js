@@ -1,35 +1,39 @@
 "use client";
 
+import { Primary } from "@prisma/client";
 import { Select } from "@radix-ui/themes";
 import { useRouter } from "next/navigation";
-import React from "react";
 
-const filterOptions: { label: string; value?: string }[] = [
+const languages: { label: string; value?: Primary }[] = [
   { label: "All" },
-  { label: "PHP", value: "PHP" },
-  { label: "MERN", value: "MERN" },
-  { label: "NEXT.js", value: "NEXT.js" },
+  { label: "PHP", value: 'PHP' },
+  { label: "MERN", value: 'MERN' },
+  { label: "NEXT.js", value: 'NEXTjs' },
 ];
 
 const ProjectFilter = () => {
+  
   const router = useRouter();
 
   return (
     <Select.Root
-      onValueChange={(option) => {
-        const query = option ? `?option=${option}` : "";
-        router.push("/portfolio/list" + query);
+      onValueChange={(language) => {
+
+        // const query = language ? `?option=${language}` : '';
+        const query = language === 'ALL' ? '' : `?language=${language}`
+        router.push('/portfolio/list' + query);
       }}
     >
       <Select.Trigger placeholder="Filter Projects..." />
       <Select.Content>
-        {filterOptions.map((option) => (
+        {languages.map( language => (
+
           <Select.Item
             className="text-red-600 hover:bg-red-600 hover:text-stone-800 active:shadow-none focus:bg-red-600 focus:text-stone-800"
-            key={option.value}
-            value={option.value || " "}
+            key={language.label}
+            value={language.value ?? 'ALL' }
           >
-            {option.label}
+            {language.label}
           </Select.Item>
         ))}
       </Select.Content>

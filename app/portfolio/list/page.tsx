@@ -1,18 +1,28 @@
+import { SideBar } from "@/app/components";
 import prisma from "@/prisma/client";
 import Link from "next/link";
-import { SideBar } from "@/app/components";
 import ProjectFilter from "./ProjectFilter";
+import { Primary } from "@prisma/client";
 
 const styles =
   "fixed right-0 top-4 h-full flex flex-col pr-8 gap-10 justify-center";
 
 interface Props {
-  searchParams: { option: string };
+  searchParams: { language:  Primary };
 }
 
 export const PortfolioPage = async ({ searchParams }: Props) => {
-  console.log(searchParams.option);
-  const projects = await prisma.project.findMany();
+
+  const primary_languages = Object.values(Primary);
+  const language = primary_languages.includes(searchParams.language)
+    ? searchParams.language
+    : undefined;
+
+  const projects = await prisma.project.findMany({
+    where: {
+      primary_language: language
+    }
+  });
 
   return (
     <div className="mx-2 pt-8 px-14 bg-stone-800 text-red-600 min-h-screen">
@@ -43,7 +53,7 @@ export const PortfolioPage = async ({ searchParams }: Props) => {
                 {project.deployment_link}
               </span>
               <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                {project.languages}
+                {project.primary_language}
               </span>
             </div>
           </Link>
