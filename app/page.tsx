@@ -75,15 +75,21 @@ export default function Home() {
             National Institute of Health (NIH) funded studies. Along with these
             responsibilities, I build data visualization dashboards using data
             connectors between REDCap and Tableau and I have built several
-            sofware solutions that interact with multiple API`s and move data
+            software solutions that interact with multiple API`s and move data
             into our REDCap projects.
           </p>
+          <br/>
           <p>
             I am a very raw developer and eager to learn. I have taught myself
-            multiple technology languages - php, next.js, tableau - without much
-            mentorship and senior leadership in my field. I am a problem solver,
+            multiple technology languages - php, next.js, tableau - without guidance of a
+            mentor or senior leadership in my field. I am a problem solver,
             my department gives me their visions and it is up to me to execute
-            their
+            them.  I believe I have a track record to learn quickly and will grow exponentially with the right team and guidance.  I look forward to hearing from you, thanks for checking out my site!
+          </p>
+          <br/>
+          <p>
+            Sincerely,
+            Austin Williams
           </p>
         </div>
         <button

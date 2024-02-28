@@ -3,6 +3,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import classnames from "classnames";
 import React from "react";
+import Image from "next/image";
+import logo from "../public/logo.png"
 
 const NavBar = () => {
   const pathname = usePathname();
@@ -15,7 +17,12 @@ const NavBar = () => {
   return (
     <nav className="mt-2 mx-2 flex bg-stone-800 text-gray-200 h-14 items-center">
       <Link className="w-1/2 pl-12" href="/">
-        LOGO
+        <Image 
+        src={logo}
+        height={100}
+        width={100}
+        alt="logo" 
+        />
       </Link>
       <ul className="w-1/2 flex justify-evenly">
         {links.map((link) => (
