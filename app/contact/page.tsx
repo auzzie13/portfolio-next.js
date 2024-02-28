@@ -9,6 +9,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { createMessageSchema } from "../validationSchemas";
+import { Metadata } from "next";
 
 const styles =
   "fixed right-0 top-4 h-full flex flex-col pr-8 gap-10 justify-center";
@@ -90,5 +91,7 @@ const ContactPage = () => {
     </div>
   );
 };
+
+
 
 export default ContactPage;

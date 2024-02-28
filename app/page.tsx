@@ -4,6 +4,8 @@ import Image from "next/image";
 import headshot from "../public/headshot2.png";
 import { useState } from "react";
 import SideBar from "./components/SideBar";
+import { title } from "process";
+import { Metadata } from "next";
 
 const styles = "flex gap-10";
 
@@ -12,7 +14,6 @@ export default function Home() {
 
   function toggle() {
     setShowMe(!showMe);
-    console.log();
   }
 
   return (
@@ -110,3 +111,5 @@ export default function Home() {
     </div>
   );
 }
+
+

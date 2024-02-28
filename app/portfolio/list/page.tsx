@@ -3,6 +3,7 @@ import prisma from "@/prisma/client";
 import Link from "next/link";
 import ProjectFilter from "./ProjectFilter";
 import { Primary } from "@prisma/client";
+import { Metadata } from "next";
 
 const styles =
   "fixed right-0 top-4 h-full flex flex-col pr-8 gap-10 justify-center";
@@ -63,5 +64,10 @@ export const PortfolioPage = async ({ searchParams }: Props) => {
     </div>
   );
 };
+
+export const metadata: Metadata = {
+  title: "Portfolio Page",
+  description: "Page that displays projects that I have been involved with and includes a filter to filter down projects by languages"
+}
 
 export default PortfolioPage;

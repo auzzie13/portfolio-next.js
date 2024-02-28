@@ -45,7 +45,7 @@ const ProjectDetailPage = async ({ params }: Props) => {
           {project.deployment_link}
         </span>
         <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-          {project.languages}
+          {project.primary_language}
         </span>
       </div>
     </div>
@@ -53,5 +53,14 @@ const ProjectDetailPage = async ({ params }: Props) => {
     </div>
   );
 };
+
+export async function generateMetadata({ params }: Props) {
+  const project = await prisma.project.findUnique({ where: { id: parseInt(params.id) }});
+
+  return {
+    title: project?.project_name,
+    description: project?.description
+  }
+}
 
 export default ProjectDetailPage;

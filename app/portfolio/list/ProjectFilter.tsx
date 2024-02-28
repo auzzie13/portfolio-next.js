@@ -18,18 +18,18 @@ const ProjectFilter = () => {
 
   return (
     <Select.Root
-      defaultValue={searchParams.get('language') || 'ALL'}
+      defaultValue={searchParams.get('language') || ''}
       onValueChange={(language) => {
         const query = language === 'ALL' ? '' : `?language=${language}`
         router.push('/portfolio/list' + query);
       }}
     >
       <Select.Trigger placeholder="Filter Projects..." />
-      <Select.Content>
+      <Select.Content >
         {languages.map( language => (
 
           <Select.Item
-            className="text-red-600 hover:bg-red-600 hover:text-stone-800 active:shadow-none focus:bg-red-600 focus:text-stone-800"
+            className="text-red-600 hover:bg-red-600 hover:text-stone-800 active:shadow-none focus:bg-red-600 focus:text-stone-800 active:border-0"
             key={language.label}
             value={language.value ?? 'ALL' }
           >
