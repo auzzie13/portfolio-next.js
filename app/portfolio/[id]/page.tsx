@@ -1,4 +1,4 @@
-import React from "react";
+import React, { cache } from "react";
 import prisma from "@/prisma/client";
 import { notFound } from "next/navigation";
 import { SideBar } from "@/app/components";
@@ -12,13 +12,16 @@ interface Props {
   params: { id: string };
 }
 
+const fetchProject = cache( (projectId: number) => 
+   prisma.project.findUnique({
+    where: { id: projectId}
+  }))
+
 const ProjectDetailPage = async ({ params }: Props) => {
   // if (typeof params.id !== 'number') notFound();
   // console.log(typeof params.id);
 
-  const project = await prisma.project.findUnique({
-    where: { id: parseInt(params.id) },
-  });
+  const project = await fetchProject(parseInt(params.id));
 
   if (!project) notFound();
 
@@ -55,7 +58,7 @@ const ProjectDetailPage = async ({ params }: Props) => {
 };
 
 export async function generateMetadata({ params }: Props) {
-  const project = await prisma.project.findUnique({ where: { id: parseInt(params.id) }});
+  const project = await fetchProject(parseInt(params.id))
 
   return {
     title: project?.project_name,
