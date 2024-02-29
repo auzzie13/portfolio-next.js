@@ -16,7 +16,7 @@ const NavBar = () => {
 
   return (
     <nav className="mt-2 mx-2 flex bg-stone-800 text-gray-200 h-14 items-center">
-      <Link className="w-1/2 pl-12" href="/">
+      <Link className="w-1/2 pl-24" href="/">
         <Image 
         src={logo}
         height={100}

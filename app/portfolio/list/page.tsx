@@ -61,6 +61,7 @@ export const PortfolioPage = async ({ searchParams }: Props) => {
         ))}
         <SideBar styles={styles} />
       </div>
+      <p className="mt-4">Phase II:  After completing my personal site, I am taking the time to review all my projects and will be uploading them over the next few weeks. Thanks for your patience.</p>
     </div>
   );
 };

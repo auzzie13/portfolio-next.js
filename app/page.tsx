@@ -1,11 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import headshot from "../public/headshot2.png";
 import { useState } from "react";
+import headshot from "../public/headshot2.png";
 import SideBar from "./components/SideBar";
-import { title } from "process";
-import { Metadata } from "next";
 
 const styles = "flex gap-10";
 
@@ -78,17 +76,20 @@ export default function Home() {
             software solutions that interact with multiple API`s and move data
             into our REDCap projects.
           </p>
-          <br/>
+          <br />
           <p>
             I am a very raw developer and eager to learn. I have taught myself
-            multiple technology languages - php, next.js, tableau - without guidance of a
-            mentor or senior leadership in my field. I am a problem solver,
-            my department gives me their visions and it is up to me to execute
-            them.  I believe I have a track record to learn quickly and will grow exponentially with the right team and guidance.  I look forward to hearing from you, thanks for checking out my site!
+            multiple technology languages - php, next.js, tableau - without
+            guidance of a mentor or senior leadership in my field. I am a
+            problem solver, my department gives me their visions and it is up to
+            me to execute them. I believe I have a track record to learn quickly
+            and will grow exponentially with the right team and guidance. I look
+            forward to hearing from you, thanks for checking out my site!
           </p>
-          <br/>
+          <br />
           <p>
             Sincerely,
+            <br />
             Austin Williams
           </p>
         </div>
@@ -117,5 +118,3 @@ export default function Home() {
     </div>
   );
 }
-
-
