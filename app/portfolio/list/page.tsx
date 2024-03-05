@@ -12,7 +12,7 @@ interface Props {
   searchParams: { language:  Primary };
 }
 
- const PortfolioPage = async ({ searchParams }: Props) => {
+export const PortfolioPage = async ({ searchParams }: Props) => {
 
   const primary_languages = Object.values(Primary);
   const language = primary_languages.includes(searchParams.language)
@@ -71,4 +71,4 @@ export const metadata: Metadata = {
   description: "Page that displays projects that I have been involved with and includes a filter to filter down projects by languages"
 };
 
-export default PortfolioPage;
+// export default PortfolioPage;
