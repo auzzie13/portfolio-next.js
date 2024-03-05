@@ -9,10 +9,22 @@ const styles =
   "fixed right-0 top-4 h-full flex flex-col pr-8 gap-10 justify-center";
 
 interface Props {
-  searchParams: { language: Primary };
+  searchParams: { language:  Primary };
 }
 
-const PortfolioPage = ({ projects }: { projects: any[] }) => {
+ const PortfolioPage = async ({ searchParams }: Props) => {
+
+  const primary_languages = Object.values(Primary);
+  const language = primary_languages.includes(searchParams.language)
+    ? searchParams.language
+    : undefined;
+
+  const projects = await prisma.project.findMany({
+    where: {
+      primary_language: language
+    }
+  });
+
   return (
     <div className="mx-2 pt-8 px-14 bg-stone-800 text-red-600 min-h-screen">
       <ProjectFilter />
@@ -49,32 +61,14 @@ const PortfolioPage = ({ projects }: { projects: any[] }) => {
         ))}
         <SideBar styles={styles} />
       </div>
-      <p className="mt-4">Phase II: After completing my personal site, I am taking the time to review all my projects and will be uploading them over the next few weeks. Thanks for your patience.</p>
+      <p className="mt-4">Phase II:  After completing my personal site, I am taking the time to review all my projects and will be uploading them over the next few weeks. Thanks for your patience.</p>
     </div>
   );
 };
 
-export const getServerSideProps = async ({ query }: { query: any }) => {
-  const { language } = query;
-  const primary_languages = Object.values(Primary);
-  const lang = primary_languages.includes(language) ? language : undefined;
-
-  const projects = await prisma.project.findMany({
-    where: {
-      primary_language: lang,
-    },
-  });
-
-  return {
-    props: {
-      projects,
-    },
-  };
+export const metadata: Metadata = {
+  title: "Portfolio Page",
+  description: "Page that displays projects that I have been involved with and includes a filter to filter down projects by languages"
 };
-
-// export const metadata: Metadata = {
-//   title: "Portfolio Page",
-//   description: "Page that displays projects that I have been involved with and includes a filter to filter down projects by languages"
-// }
 
 export default PortfolioPage;
