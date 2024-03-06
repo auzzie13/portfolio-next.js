@@ -66,9 +66,9 @@ export const PortfolioPage = async ({ searchParams }: Props) => {
   );
 };
 
-export const metadata: Metadata = {
-  title: "Portfolio Page",
-  description: "Page that displays projects that I have been involved with and includes a filter to filter down projects by languages"
-};
+// export const metadata: Metadata = {
+//   title: "Portfolio Page",
+//   description: "Page that displays projects that I have been involved with and includes a filter to filter down projects by languages"
+// };
 
-// export default PortfolioPage;
+export default PortfolioPage;
