@@ -3,17 +3,16 @@ import prisma from "@/prisma/client";
 import Link from "next/link";
 import ProjectFilter from "./ProjectFilter";
 import { Primary } from "@prisma/client";
-// import { Metadata } from "next";
+import { Metadata } from "next";
 
 const styles =
   "fixed right-0 top-4 h-full flex flex-col pr-8 gap-10 justify-center";
 
 interface Props {
-  searchParams: { language:  Primary };
+  searchParams: { language: Primary };
 }
 
-  const PortfolioPage = async ({ searchParams }: Props) => {
-
+const PortfolioPage = async ({ searchParams }: Props) => {
   const primary_languages = Object.values(Primary);
   const language = primary_languages.includes(searchParams.language)
     ? searchParams.language
@@ -21,8 +20,8 @@ interface Props {
 
   const projects = await prisma.project.findMany({
     where: {
-      primary_language: language
-    }
+      primary_language: language,
+    },
   });
 
   return (
@@ -31,7 +30,7 @@ interface Props {
       <div className="mt-2 grid grid-cols-4 gap-4">
         {projects.map((project) => (
           <Link
-            href={`/portfolio/${project.id}`}
+            href={`/list/portfolio/${project.id}`}
             key={project.id}
             className="max-w-sm rounded overflow-hidden shadow-lg border-solid border-2 border-red-600 hover:bg-red-600 hover:text-stone-800 active:bg-gray-200"
           >
@@ -61,14 +60,18 @@ interface Props {
         ))}
         <SideBar styles={styles} />
       </div>
-      <p className="mt-4">Phase II:  After completing my personal site, I am taking the time to review all my projects and will be uploading them over the next few weeks. Thanks for your patience.</p>
+      <p className="mt-4">
+        Phase II: After completing my personal site, I am taking the time to
+        review all my projects and will be uploading them over the next few
+        weeks. Thanks for your patience.
+      </p>
     </div>
   );
 };
 
-// export const metadata: Metadata = {
-//   title: "Portfolio Page",
-//   description: "Page that displays projects that I have been involved with and includes a filter to filter down projects by languages"
-// };
+export const metadata: Metadata = {
+  title: "Portfolio Page",
+  description: "Page that displays projects that I have been involved with and includes a filter to filter down projects by languages"
+};
 
 export default PortfolioPage;

@@ -10,7 +10,7 @@ const NavBar = () => {
   const pathname = usePathname();
   const links = [
     { label: "Home", href: "/" },
-    { label: "Portfolio", href: "/portfolio" },
+    { label: "Portfolio", href: "/list/portfolio" },
     { label: "Contact", href: "/contact" },
   ];
 
