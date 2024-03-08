@@ -12,7 +12,7 @@ interface Props {
   searchParams: { language:  Primary };
 }
 
-export const PortfolioPage = async ({ searchParams }: Props) => {
+  const PortfolioPage = async ({ searchParams }: Props) => {
 
   const primary_languages = Object.values(Primary);
   const language = primary_languages.includes(searchParams.language)
