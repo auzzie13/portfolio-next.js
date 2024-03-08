@@ -21,7 +21,7 @@ const ProjectFilter = () => {
       defaultValue={searchParams.get('language') || ''}
       onValueChange={(language) => {
         const query = language === 'ALL' ? '' : `?language=${language}`
-        router.push('/portfolio/list' + query);
+        router.push('/portfolio' + query);
       }}
     >
       <Select.Trigger placeholder="Filter Projects..." />

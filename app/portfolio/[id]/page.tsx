@@ -28,7 +28,7 @@ const ProjectDetailPage = async ({ params }: Props) => {
 
   return (
     <div>
-    <Link className="mx-2 flex items-center text-red-600" key="/portfolio/list" href="/portfolio/list"><ArrowLeftIcon color="red" />Back</Link>
+    <Link className="mx-2 flex items-center text-red-600" key="/portfolio" href="/portfolio"><ArrowLeftIcon color="red" />Back</Link>
     <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pt-8 px-14 bg-stone-800 max-w-sm rounded overflow-hidden shadow-lg border-solid border-2 border-red-600">
       {/* <img
   className="w-full"

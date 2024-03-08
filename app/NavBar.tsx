@@ -4,13 +4,13 @@ import { usePathname } from "next/navigation";
 import classnames from "classnames";
 import React from "react";
 import Image from "next/image";
-import logo from "../public/logo.png"
+import logo from "../public/logo.png";
 
 const NavBar = () => {
   const pathname = usePathname();
   const links = [
     { label: "Home", href: "/" },
-    { label: "Portfolio", href: "/portfolio/list" },
+    { label: "Portfolio", href: "/portfolio" },
     { label: "Contact", href: "/contact" },
   ];
 
